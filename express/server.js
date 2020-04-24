@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 router.get('/*', (req, res) => {
-  const dirName = __dirname + 'app/dist';
+  const dirName = __dirname + '/app/dist';
     res.sendFile(path.join(`${dirName}/index.html`));
 });
 
