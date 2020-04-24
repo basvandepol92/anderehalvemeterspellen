@@ -1,0 +1,14 @@
+<mat-expansion-panel >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{game.title}}
+      </mat-panel-title>
+      <mat-panel-description>
+        {{getAge(game.age)}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    Omschrijving: {{ game.description}}
+    Voorbereiding: {{getTime(game.preparationTime)}}
+    Duur: {{getTime(game.duration)}}
+  </mat-expansion-panel>
