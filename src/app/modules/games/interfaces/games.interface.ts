@@ -30,7 +30,7 @@ export const TimeMapping: Time[] = [
     description: '30 - 60 minuten',
     enum: TimeEnum.HALFOUR_TO_HOUR,
   },{
-    description: '60 - 12 minuten',
+    description: '60 - 120 minuten',
     enum: TimeEnum.HOUR_TO_TWO_HOURS,
   },{
     description: '> 120 minuten',
