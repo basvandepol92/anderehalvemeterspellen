@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [AddGameComponent, GameListComponent, GameDetailComponent],
@@ -32,6 +33,7 @@ import {MatListModule} from '@angular/material/list';
     MatSnackBarModule,
     MatExpansionModule,
     MatListModule,
+    MatToolbarModule,
     FormsModule
   ]
 })

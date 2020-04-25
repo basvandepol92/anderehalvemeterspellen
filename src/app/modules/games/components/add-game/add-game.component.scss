@@ -1,26 +1,35 @@
 @import '~@angular/material/theming';
 
-mat-form-field {
-    padding: 10px;
-    width: calc(100% - 20px);
-
-    &.half-width {
-        width: calc(50% - 20px);
-    }
-
-    textarea {
-        height: 90px;
-    }
+.spacer {
+    flex: 1 1 auto;
 }
 
-.subtitle {
-    border-bottom: 1px solid #3f51b5;
-    margin: 0 10px;
-    font-size: 0.8rem;
-}
+mat-dialog-content {
+    margin: 0px 24px 24px;
+    padding: 0;
 
-.add-material {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    mat-form-field {
+        padding: 10px;
+        width: calc(100% - 20px);
+
+        &.half-width {
+            width: calc(50% - 20px);
+        }
+
+        textarea {
+            height: 90px;
+        }
+    }
+
+    .subtitle {
+        border-bottom: 1px solid #3f51b5;
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+
+    .add-material {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
