@@ -10,6 +10,14 @@
 
     <div class="detail-wrapper">
       <div class="detail-halve">
+        <div class="detail-title">Titel:</div>
+        {{ game.title }}
+      </div>
+      <div class="detail-halve">
+        <div class="detail-title">Leeftijd:</div>
+        {{getAge(game.age)}}
+      </div>
+      <div class="detail-halve">
         <div class="detail-title">Tijdsduur:</div>
         {{ getTime(game.duration)}}
       </div>
