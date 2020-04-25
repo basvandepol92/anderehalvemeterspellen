@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv").config();
 
 const dbUrl = process.env.DB_URL;
-console.log(dbUrl); 
 const dbOptions = {
   useNewUrlParser: true,
   useFindAndModify: false,

@@ -1,3 +1,26 @@
+@import '~@angular/material/theming';
+
 mat-form-field {
-    width: 100%;
+    padding: 10px;
+    width: calc(100% - 20px);
+
+    &.half-width {
+        width: calc(50% - 20px);
+    }
+
+    textarea {
+        height: 90px;
+    }
+}
+
+.subtitle {
+    border-bottom: 1px solid #3f51b5;
+    margin: 0 10px;
+    font-size: 0.8rem;
+}
+
+.add-material {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

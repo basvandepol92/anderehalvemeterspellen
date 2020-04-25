@@ -1,18 +1,18 @@
  <mat-dialog-content>
    <mat-card-header>
-     <mat-card-title>Nieuw spel</mat-card-title>
+     <mat-card-title>Voeg een nieuw spel toe:</mat-card-title>
    </mat-card-header>
    <mat-card-content>
      <form class="example-form" [formGroup]="newGameForm">
        <mat-form-field>
          <mat-label>Titel</mat-label>
-         <input matInput name="title" formControlName="title">
+         <input autocomplete="false" matInput name="title" formControlName="title">
        </mat-form-field>
        <mat-form-field>
          <mat-label>Omschrijving</mat-label>
          <textarea matInput name="description" formControlName="description"></textarea>
        </mat-form-field>
-       <mat-form-field>
+       <mat-form-field class="half-width">
          <mat-label>Tijdsduur</mat-label>
          <mat-select formControlName="duration">
            <mat-option *ngFor="let time of allTimes" [value]="time.enum">
@@ -20,7 +20,7 @@
            </mat-option>
          </mat-select>
        </mat-form-field>
-       <mat-form-field>
+       <mat-form-field class="half-width">
          <mat-label>Voorbereidingstijd</mat-label>
          <mat-select formControlName="preparationTime">
            <mat-option *ngFor="let time of allTimes" [value]="time.enum">
@@ -28,7 +28,7 @@
            </mat-option>
          </mat-select>
        </mat-form-field>
-       <mat-form-field>
+       <mat-form-field class="half-width">
          <mat-label>Leeftijd</mat-label>
          <mat-select formControlName="age">
            <mat-option *ngFor="let age of allAges" [value]="age.enum">
@@ -36,30 +36,32 @@
            </mat-option>
          </mat-select>
        </mat-form-field>
-       <mat-form-field>
+       <mat-form-field class="half-width">
          <mat-label>Minimaal aantal spelers</mat-label>
          <input matInput type="number" name="minNumberOfPlayers" formControlName="minNumberOfPlayers">
        </mat-form-field>
-       <mat-form-field>
-         <mat-label>Auteur (optioneel)</mat-label>
-         <input matInput name="author" formControlName="author" />
-       </mat-form-field>
-       <h4>Benodigde materialen</h4>
+       <h4 class="subtitle">Benodigde materialen</h4>
        <mat-list dense>
          <mat-list-item *ngFor="let material of materialForm.controls; index as i">
-           <p matline>{{material.value}}</p>
+           <div class="mat-list-text">{{material.value}}</div>
            <button mat-icon-button (click)="deleteMaterial(i)">
              <mat-icon matListIcon>delete</mat-icon>
            </button>
          </mat-list-item>
        </mat-list>
+       <div class="add-material">
+         <mat-form-field>
+           <mat-label>Materiaal Toevoegen</mat-label>
+           <input matInput [(ngModel)]="newMaterial" [ngModelOptions]="{standalone: true}">
+         </mat-form-field>
+         <button mat-mini-fab color="primary" [disabled]="newMaterial && !newMaterial.length" (click)="addMaterial()">
+           <mat-icon>add</mat-icon>
+         </button>
+       </div>
        <mat-form-field>
-         <mat-label>Materiaal Toevoegen</mat-label>
-         <input matInput [(ngModel)]="newMaterial" [ngModelOptions]="{standalone: true}">
+         <mat-label>Auteur (optioneel)</mat-label>
+         <input matInput name="author" formControlName="author" />
        </mat-form-field>
-       <button mat-mini-fab color="primary" [disabled]="newMaterial && !newMaterial.length" (click)="addMaterial()">
-         <mat-icon>add</mat-icon>
-       </button>
      </form>
    </mat-card-content>
    <mat-card-actions>

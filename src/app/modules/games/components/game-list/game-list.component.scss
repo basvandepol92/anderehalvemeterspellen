@@ -1,5 +1,21 @@
+:host {
+    margin-bottom: 70px;
+    display: block;
+}
+
 .add-game {
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
+}
+
+.welcome-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.1rem;
+}
+
+.welcome-text {
+    text-align: center;
+    margin: 20px 20px 30px;
 }

@@ -1,0 +1,26 @@
+.detail-halve {
+    font-size: 0.8rem;
+    vertical-align: top;
+    width: calc(100% - 20px);
+    display: inline-block;
+    padding: 0 10px;
+
+    .detail-title {
+        display: inline-block;
+        font-weight: bold;
+
+        &.detail-title-top {
+            display: block;
+        }
+    }
+
+    .description {
+        padding-left: 10px;
+        text-align: justify;
+    }
+
+    .material-list {
+        margin-top: 0;
+        padding-left: 25px;    
+    }
+}

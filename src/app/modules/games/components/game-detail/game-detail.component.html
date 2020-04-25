@@ -8,7 +8,36 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    Omschrijving: {{ game.description}}
-    Voorbereiding: {{getTime(game.preparationTime)}}
-    Duur: {{getTime(game.duration)}}
+    <div class="detail-wrapper">
+      <div class="detail-halve">
+        <div class="detail-title">Tijdsduur:</div>
+        {{ getTime(game.duration)}}
+      </div>
+      <div class="detail-halve">
+        <div class="detail-title">Voorbereidingstijd:</div>
+        {{ getTime(game.preparationTime)}}
+      </div>
+      <div class="detail-halve">
+        <div class="detail-title">Leeftijd:</div>
+        {{ getAge(game.age)}}
+      </div>
+      <div class="detail-halve">
+        <div class="detail-title">Minimaal aantal spelers:</div>
+        {{ game.minNumberOfPlayers}}
+      </div>
+      <div class="detail-halve"  *ngIf="game.material.length">
+        <div class="detail-title detail-title-top">Materialen:</div>
+        <ul class="material-list">
+          <li *ngFor="let material of game.material">{{material}}</li>
+        </ul>
+      </div>
+      <div class="detail-halve">
+        <div class="detail-title detail-title-top">Omschrijving:</div>
+        <div class="description">{{ game.description}}</div>
+      </div>
+      <div class="detail-halve" *ngIf="game.author">
+        <div class="detail-title">Auteur:</div>
+        {{ game.author }}
+      </div>
+    </div>
   </mat-expansion-panel>
