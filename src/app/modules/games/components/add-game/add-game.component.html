@@ -37,10 +37,13 @@
          </mat-select>
        </mat-form-field>
        <mat-form-field>
+         <mat-label>Minimaal aantal spelers</mat-label>
+         <input matInput type="number" name="minNumberOfPlayers" formControlName="minNumberOfPlayers">
+       </mat-form-field>
+       <mat-form-field>
          <mat-label>Auteur (optioneel)</mat-label>
          <input matInput name="author" formControlName="author" />
        </mat-form-field>
-
        <h4>Benodigde materialen</h4>
        <mat-list dense>
          <mat-list-item *ngFor="let material of materialForm.controls; index as i">

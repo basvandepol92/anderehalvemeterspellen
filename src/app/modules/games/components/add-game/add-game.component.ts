@@ -26,6 +26,7 @@ export class AddGameComponent {
       Validators.required
     ),
     material: new FormArray([]),
+    minNumberOfPlayers: new FormControl(0, {}),
     author: new FormControl(null),
   });
   allTimes = TimeMapping;

@@ -1,10 +1,11 @@
 export interface Game {
-  id?: number;
+  _id?: number;
   title: string;
   description: string;
   age: AgeEnum;
   duration: TimeEnum;
   preparationTime: TimeEnum;
+  minNumberOfPlayers: number;
   material: Material[];
   author?: string;
 }

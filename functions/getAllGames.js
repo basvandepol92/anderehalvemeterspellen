@@ -1,18 +1,20 @@
-exports.handler = function (event, context, callback) {
-  const listOfGames = [
-    {
-      id: 1,
-      title: "Test Game",
-      description: "Dit is een omschrijving van het spel",
-      duration: 0,
-      preparationTime: 0,
-      age: 0,
-      material: [],
-    },
-  ];
+const mongoose = require("mongoose");
+const db = require("./server");
+const Game = require("./gameModel.js");
+exports.handler = async (event, context) => {
+  context.callbackWaitsForEmptyEventLoop = false;
 
-  return callback(null, {
-    statusCode: 200,
-    body: JSON.stringify(listOfGames),
-  });
+  try {
+    const games = await Game.Game.find();
+    return {
+      statusCode: 200,
+      body: JSON.stringify(games),
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ msg: err.message }),
+    };
+  }
 };
