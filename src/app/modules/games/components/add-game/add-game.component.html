@@ -11,7 +11,7 @@
     <form class="example-form" [formGroup]="newGameForm">
       <mat-form-field>
         <mat-label>Titel</mat-label>
-        <input autocomplete="false" matInput name="title" formControlName="title">
+        <input autocomplete="off" matInput name="title" formControlName="title">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Omschrijving</mat-label>
@@ -45,7 +45,7 @@
         <mat-label>Minimaal aantal spelers</mat-label>
         <input matInput type="number" name="minNumberOfPlayers" formControlName="minNumberOfPlayers">
       </mat-form-field>
-      <h4 class="subtitle">Benodigde materialen</h4>
+      <h4 class="subtitle">Benodigde materialen (optioneel)</h4>
       <mat-list dense>
         <mat-list-item *ngFor="let material of materialForm.controls; index as i">
           <div class="mat-list-text">{{material.value}}</div>
