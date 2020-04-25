@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './add-game.component.html',
   styleUrls: ['./add-game.component.scss'],
 })
-export class AddGameComponent {
+export class AddGameComponent{
   newGameForm: FormGroup = new FormGroup({
     title: new FormControl(null, [Validators.required, Validators.maxLength(100)]),
     description: new FormControl(null, Validators.required),
@@ -41,6 +41,7 @@ export class AddGameComponent {
 
   saveNewGame() {
     this.gamesService.addNewGame(this.newGameForm.value).subscribe(() => {
+      this.gamesService.updateGameList();
       this.showSnackbarMessage(`TOP! ${this.newGameForm.get('title').value} is toegevoegd aan de lijst`);
       this.dialogRef.close();
     }, () => {
