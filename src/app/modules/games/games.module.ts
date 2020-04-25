@@ -16,9 +16,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FilterGamesComponent } from './components/filter-games/filter-games.component';
 
 @NgModule({
-  declarations: [AddGameComponent, GameListComponent, GameDetailComponent],
+  declarations: [AddGameComponent, GameListComponent, GameDetailComponent, FilterGamesComponent],
   imports: [
     CommonModule,
     GamesRouting,

@@ -11,11 +11,11 @@ export class GamesService {
 
   constructor(private http: HttpClient) { }
 
-  get allGames(): Observable<Game[]> {
-    return this.http.get<Game[]>(`${environment.url}/.netlify/functions/getAllGames`);
-  }
-
   addNewGame(game: Game): Observable<any> {
     return this.http.post<Game[]>(`${environment.url}/.netlify/functions/createGame`, game);
+  }
+
+  filterGame(filter: Partial<Game>): Observable<Game[]> {
+    return this.http.post<Game[]>(`${environment.url}/.netlify/functions/filterGames`, filter);
   }
 }

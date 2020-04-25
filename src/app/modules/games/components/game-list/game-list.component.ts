@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent {
-  allGames: Observable<Game[]> = this.gamesService.allGames;
+  allGames: Observable<Game[]> = this.gamesService.filterGame({});
   constructor(private dialog: MatDialog, 
     private gamesService: GamesService) { }
 
@@ -19,5 +19,10 @@ export class GameListComponent {
     this.dialog.open(AddGameComponent, {
       width: '500px'
     });
+  }
+
+  onFilter(filter: Partial<Game>) {
+    console.log(filter);
+    this.allGames = this.gamesService.filterGame(filter);
   }
 }

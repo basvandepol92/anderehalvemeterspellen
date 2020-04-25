@@ -1,0 +1,30 @@
+<form [formGroup]="filterForm">
+  <mat-form-field >
+    <mat-label>Leeftijd</mat-label>
+    <mat-select formControlName="age">
+      <mat-option [value]="none">Alles</mat-option>
+      <mat-option *ngFor="let age of allAges" [value]="age.enum">
+        {{age.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field >
+    <mat-label>Tijdsduur</mat-label>
+    <mat-select formControlName="duration">
+      <mat-option [value]="none">Alles</mat-option>
+      <mat-option *ngFor="let time of allTimes" [value]="time.enum">
+        {{time.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field >
+    <mat-label>Voorbereidingstijd</mat-label>
+    <mat-select formControlName="preparationTime">
+      <mat-option [value]="none">Alles</mat-option>
+      <mat-option *ngFor="let time of allTimes" [value]="time.enum">
+        {{time.description}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>

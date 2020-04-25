@@ -14,7 +14,11 @@ const routes: Routes = [
       import('./modules/games/games.module').then(
         (m) => m.GamesModule
       ),
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'spellen'
+  },
 ];
 
 @NgModule({

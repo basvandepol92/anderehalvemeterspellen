@@ -8,9 +8,14 @@
   </article>
 </div>
 
+<app-filter-games (filter)="onFilter($event)"></app-filter-games>
+
 <mat-accordion>
     <app-game-detail [game]="game" *ngFor="let game of allGames | async"></app-game-detail>
 </mat-accordion>
+<div *ngIf="(allGames | async)?.length==0">
+  Helaas je zoekopdracht heeft geen resultaten!
+</div>
 
 <button class="add-game" mat-fab color="primary" (click)="openNewGameDialog()">
   <mat-icon>add</mat-icon>
