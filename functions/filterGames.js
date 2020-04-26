@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
   };
 
   try {
-    const games = await Game.Game.find(find);
+    const games = await Game.Game.find(find).sort( { _id: -1 } );
     return {
       statusCode: 200,
       body: JSON.stringify(games),
