@@ -18,20 +18,16 @@
         {{getAge(game.age)}}
       </div>
       <div class="detail-halve">
+        <div class="detail-title">Minimaal aantal spelers:</div>
+        {{ game.minNumberOfPlayers}}
+      </div>
+      <div class="detail-halve">
         <div class="detail-title">Tijdsduur:</div>
         {{ getTime(game.duration)}}
       </div>
       <div class="detail-halve">
         <div class="detail-title">Voorbereidingstijd:</div>
         {{ getTime(game.preparationTime)}}
-      </div>
-      <div class="detail-halve">
-        <div class="detail-title">Leeftijd:</div>
-        {{ getAge(game.age)}}
-      </div>
-      <div class="detail-halve">
-        <div class="detail-title">Minimaal aantal spelers:</div>
-        {{ game.minNumberOfPlayers}}
       </div>
       <div class="detail-halve"  *ngIf="game.material.length">
         <div class="detail-title detail-title-top">Materialen:</div>

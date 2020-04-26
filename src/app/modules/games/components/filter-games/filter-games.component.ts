@@ -1,3 +1,4 @@
+import { GamesService } from './../../services/games.service';
 import { AgeEnum, TimeEnum, Game } from './../../interfaces/games.interface';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TimeMapping, AgeMapping } from '../../interfaces/games.interface';
@@ -19,25 +20,37 @@ export class FilterGamesComponent implements OnInit {
   });
 
   @Output() filter: EventEmitter<Partial<Game>> = new EventEmitter()
-  constructor() {}
+  constructor(gamesService: GamesService) {
+    gamesService.newGameAdded$.subscribe(() => this.resetFilters());
+  }
 
   ngOnInit(): void {
     this.filterForm.valueChanges.subscribe(() => {
-      console.log(this.filterForm.get('age').value);
       const filter = {
         ...this.getValueFor('age'),
         ...this.getValueFor('duration'),
         ...this.getValueFor('preparationTime'),
       }
+
       this.filter.emit(filter);
     });
   }
 
   private getValueFor(formControl: string): object {
-    return this.hasValue(formControl) && { age: this.filterForm.get(formControl).value};
+    return this.hasValue(formControl) && { [formControl]: this.filterForm.get(formControl).value};
   }
 
   private hasValue(formControl: string): boolean {
     return this.filterForm.get(formControl).value >= 0;
+  }
+
+  private resetFilters() {
+    const filterReset =  {
+      age: this.none,
+      duration: this.none,
+      preparationTime: this.none
+    }
+
+    this.filterForm.setValue(filterReset);
   }
 }
